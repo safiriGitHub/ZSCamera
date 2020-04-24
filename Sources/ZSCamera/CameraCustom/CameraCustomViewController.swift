@@ -176,8 +176,8 @@ public class CameraCustomViewController: UIViewController {
     }()
     let cameraButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_paizhaoanniu"), for: .normal)
-        button.setImage(UIImage(named: "camera_paizhaoanniu_dianjihou"), for: .highlighted)
+        button.setImage(UIImage(named: "camera_paizhaoanniu@2x"), for: .normal)
+        button.setImage(UIImage(named: "camera_paizhaoanniu_dianjihou@2x"), for: .highlighted)
         return button
     }()
     let flashButton: UIButton = {
