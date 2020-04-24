@@ -109,6 +109,15 @@ public class CameraCustomViewController: UIViewController {
         resultBottomView.isHidden = false
     }
     
+    private static func getBundleImage(_ name: String) -> UIImage? {
+        if let path = Bundle(for: CameraCustomViewController.self).path(forResource: "ZSTopDownHUD", ofType: "bundle"),
+            let bundle = Bundle.init(path: path),
+            let file = bundle.path(forResource: name, ofType: "png") {
+            return UIImage(contentsOfFile: file)
+        }
+        return nil
+    }
+    
     // MARK: actions
     
     @objc func cameraButtonClick() {
@@ -165,7 +174,7 @@ public class CameraCustomViewController: UIViewController {
     //MARK: Params
     let closeButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_guanbi"), for: .normal)
+        button.setImage(getBundleImage("camera_guanbi@2x"), for: .normal)
         return button
     }()
     
@@ -176,20 +185,21 @@ public class CameraCustomViewController: UIViewController {
     }()
     let cameraButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_paizhaoanniu@2x"), for: .normal)
-        button.setImage(UIImage(named: "camera_paizhaoanniu_dianjihou@2x"), for: .highlighted)
+        
+        button.setImage(getBundleImage("camera_paizhaoanniu@2x"), for: .normal)
+        button.setImage(getBundleImage("camera_paizhaoanniu_dianjihou@2x"), for: .highlighted)
         return button
     }()
     let flashButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_dengpao"), for: .normal)
-        button.setImage(UIImage(named: "camera_dengpao_dianjihou"), for: .highlighted)
-        button.setImage(UIImage(named: "camera_dengpao_dianjihou"), for: .selected)
+        button.setImage(getBundleImage("camera_dengpao@2x"), for: .normal)
+        button.setImage(getBundleImage("camera_dengpao_dianjihou@2x"), for: .highlighted)
+        button.setImage(getBundleImage("camera_dengpao_dianjihou@2x"), for: .selected)
         return button
     }()
     let pictureButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_tuku"), for: .normal)
+        button.setImage(getBundleImage("camera_tuku@2x"), for: .normal)
         return button
     }()
     
@@ -200,12 +210,12 @@ public class CameraCustomViewController: UIViewController {
     }()
     let confirmButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_queding"), for: .normal)
+        button.setImage(getBundleImage("camera_queding@2x"), for: .normal)
         return button
     }()
     let cancelButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "camera_guan"), for: .normal)
+        button.setImage(getBundleImage("camera_guan@2x"), for: .normal)
         return button
     }()
     
