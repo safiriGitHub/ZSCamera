@@ -110,7 +110,7 @@ public class CameraCustomViewController: UIViewController {
     }
     
     private static func getBundleImage(_ name: String) -> UIImage? {
-        if let path = Bundle(for: CameraCustomViewController.self).path(forResource: "ZSTopDownHUD", ofType: "bundle"),
+        if let path = Bundle(for: CameraCustomViewController.self).path(forResource: "CameraCustom", ofType: "bundle"),
             let bundle = Bundle.init(path: path),
             let file = bundle.path(forResource: name, ofType: "png") {
             return UIImage(contentsOfFile: file)
